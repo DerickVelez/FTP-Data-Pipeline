@@ -26,6 +26,7 @@ if not df2_column_validation:
 df2.to_csv('D:\development\python\DATAPIPELINEPROJECT\parsed\SOA.csv', sep='^', index=False)
 
 
+# Parsing CREDTC fixed length file
 # with open("CREDTC", "r") as file1:
 
 #     file_content = file1.read()
