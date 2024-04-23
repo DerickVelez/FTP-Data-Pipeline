@@ -27,36 +27,36 @@ df2.to_csv('D:\development\python\DATAPIPELINEPROJECT\parsed\SOA.csv', sep='^', 
 
 
 # Parsing CREDTC fixed length file
-# with open("CREDTC", "r") as file1:
+with open("CREDTC", "r") as file1:
 
-#     file_content = file1.read()
+    file_content = file1.read()
 
-# lines = file_content.splitlines()
-# data_list = []  
+lines = file_content.splitlines()
+data_list = []  
 
-# for line in lines:
-#     credit_card_number = line[0:16]
-#     transaction_date = line[46:56]
-#     transaction_amount = line[86:94]
-#     customer_number = line[124:]
+for line in lines:
+    credit_card_number = line[0:16]
+    transaction_date = line[46:56]
+    transaction_amount = line[86:94]
+    customer_number = line[124:]
     
-#     data = {
-#         'Credit_Card_Number': credit_card_number,
-#         'Transaction_Date': transaction_date,
-#         'Transaction_Amount': transaction_amount,
-#         'Customer_Number': customer_number
-#     }
+    data = {
+        'Credit_Card_Number': credit_card_number,
+        'Transaction_Date': transaction_date,
+        'Transaction_Amount': transaction_amount,
+        'Customer_Number': customer_number
+    }
 
-#     data_list.append(data)
+    data_list.append(data)
 
-# fields = ['Credit_Card_Number', 'Transaction_Date', 'Transaction_Amount', 'Customer_Number']
-# filename = 'D:\development\python\DATAPIPELINEPROJECT\parsed\CREDTC.csv'
+fields = ['Credit_Card_Number', 'Transaction_Date', 'Transaction_Amount', 'Customer_Number']
+filename = 'D:\development\python\DATAPIPELINEPROJECT\parsed\CREDTC.csv'
      
-# with open(filename, 'w', newline = '') as csvfile:
-#     writer = csv.DictWriter(csvfile, fieldnames=fields)
+with open(filename, 'w', newline = '') as csvfile:
+    writer = csv.DictWriter(csvfile, fieldnames=fields)
 
-#     writer.writeheader()
-#     writer.writerows(data_list)
+    writer.writeheader()
+    writer.writerows(data_list)
 
 
-# file1.close()
+file1.close()
