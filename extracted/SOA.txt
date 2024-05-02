@@ -1,4 +1,4 @@
-SOA Date^Customer Number^Address^Envelop Type
+SOA Date^Customer Number^Address^Envelope Type
 05/05/2023^23^Unit 903 and 904 One Global Place 5th Ave. corner 25th St., Bonifacio Global City 1634 Fort Bonifacio, City of Taguig, NCR;^Blue1
 09/30/2022^31^15th Floor Asian Century Center, 27th Street Corner 3rd and 4th Avenue, Bonifacio Global City, Taguig City^Green2
 05/10/2023^131^5F Kalayaan Bldg. 164 Salcedo cor. Dela Rosa St. Legaspi Village, San Lorenzo, Makati City^Red3
