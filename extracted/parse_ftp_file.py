@@ -1,5 +1,12 @@
 import pandas as pd
 import csv
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv() 
+
+filepath = f"{os.getenv('PARSER_PATH')}"
 
 # Parsing of excel file 
 df = pd.read_excel('Customer_data.xlsx')
@@ -11,19 +18,19 @@ df_column_validation = len(df_field_names) == len(df_excel_cols) and (df_field_n
 if not df_column_validation:
     raise Exception("Customer_data columns do not match the fields.")
 
-df.to_csv('D:\development\python\DATAPIPELINEPROJECT\parsed\Customer_data.csv', sep='^', index=False)
+df.to_csv(f'{filepath}Customer_data.csv', sep='^', index=False)
 
 # Parsing of CSV file
 df2 = pd.read_table("SOA.txt", delimiter="^") 
 
-df2_field_names = ['SOA Date', 'Customer Number', 'Address', 'Envelop Type']
+df2_field_names = ['SOA Date', 'Customer Number', 'Address', 'Envelope Type']
 df2_csv_cols  = df2.columns
 
 df2_column_validation = len(df2_field_names) == len(df2_csv_cols) and (df2_field_names == df2_csv_cols).all()
 if not df2_column_validation:
     raise Exception("SOA columns do not match the fields.")
 
-df2.to_csv('D:\development\python\DATAPIPELINEPROJECT\parsed\SOA.csv', sep='^', index=False)
+df2.to_csv(f'{filepath}SOA.csv', sep='^', index=False)
 
 
 # Parsing CREDTC fixed length file
@@ -50,7 +57,7 @@ for line in lines:
     data_list.append(data)
 
 fields = ['Credit_Card_Number', 'Transaction_Date', 'Transaction_Amount', 'Customer_Number']
-filename = 'D:\development\python\DATAPIPELINEPROJECT\parsed\CREDTC.csv'
+filename = f'{filepath}CREDTC.csv'
      
 with open(filename, 'w', newline = '') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=fields)
